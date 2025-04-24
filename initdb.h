@@ -6,14 +6,21 @@
 #include <QSqlError>
 #include <QSqlQuery>
 
-/*
-    This file defines a helper function to open a connection to an
-    in-memory SQLITE database and to create a test table.
+const auto INSERT_CUSTOMER_SQL = QLatin1String(R"(
+    insert into customer(id, name, password, checking, savings) values(?, ?, ?, ?, ?)
+    )");
 
-    If you want to use another database, simply modify the code
-    below. All the examples in this directory use this function to
-    connect to a database.
-*/
+const auto INSERT_CHECKING_SQL = QLatin1String(R"(
+    insert into checking(id, balance)
+                      values(?, ?,)
+    )");
+
+const auto INSERT_SAVINGS_SQL = QLatin1String(R"(
+    insert into savings(id, balance) values(?, ?)
+    )");
+
+
+
 //! [0]
 QSqlError createConnection()
 {
