@@ -1,13 +1,12 @@
 #include "mainwindow.h"
-#include "initdb.h"
-#include <QtWidgets>
+#include <QApplication>
 
-
-
-
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
-    MainWindow w;
-    w.show();
-    return a.exec();
+    QApplication app(argc, argv);
+
+    MainWindow win;
+    win.show();
+
+    return app.exec();
 }
