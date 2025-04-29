@@ -25,10 +25,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void about();
+
 private:
     void showError(const QSqlError &err);
     QSqlRelationalTableModel *model = nullptr;
-    int customerIdx, CheckingIdx, SavingsIdx = 0;
+    int customerIdx, checkingIdx, savingsIdx = 0;
 
     Ui::MainWindow *ui;
     void createLayout();
@@ -39,6 +42,13 @@ private:
 
     QWidget *window = nullptr;
 
-
+    QGridLayout *gridLayout = nullptr;
+    QTableView *tableView = nullptr;
+    QLabel *customerLabel = nullptr;
+    QLineEdit *customerLineEdit = nullptr;
+    QLabel *checkingLabel = nullptr;
+    QComboBox *checkingComboBox = nullptr;
+    QLabel *savingsLabel = nullptr;
+    QComboBox *savingsComboBox = nullptr;
 };
 #endif // MAINWINDOW_H

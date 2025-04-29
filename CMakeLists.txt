@@ -12,6 +12,8 @@ qt_add_executable(Bank_App
     mainwindow.h
     mainwindow.ui
     initdb.h
+    bankController.cpp
+    bankController.h
 
 
 )
