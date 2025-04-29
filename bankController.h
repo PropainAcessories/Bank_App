@@ -6,7 +6,7 @@
 #include <QSqlRelationalDelegate>
 
 QT_FORWARD_DECLARE_CLASS(QPainter)
-
+// Change arguments to use-case later.
 class BankController : public QSqlRelationalDelegate
 {
 public:
